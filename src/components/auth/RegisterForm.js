@@ -7,6 +7,7 @@ import "../../index.css";
 
 export default function RegisterForm(props) {
   const [formIsValid, setFormIsValid] = useState(false);
+  const [information, setInformation] = useState(null);
   const [focused, setFocused] = useState(false);
   const {
     inputValue: nameInput,
@@ -183,10 +184,11 @@ export default function RegisterForm(props) {
         label="Confirm Password"
         srcInputImg={img.pass}
         type="password"
-        for="pass"
-        id="pass"
+        for="confPass"
+        id="confPass"
         alt="logo"
       />
+
       <button
         className={buttonClassname}
         disabled={!formIsValid}
@@ -199,7 +201,10 @@ export default function RegisterForm(props) {
 }
 
 const RegisterContainer = styled.div`
-  width: 260px;
+  @media screen and (min-width: 600px) {
+    width: 350px;
+  }
+  width: 275px;
   background-color: #201f2294;
   border-radius: 10px;
   backdrop-filter: blur(2px);
